@@ -13,7 +13,12 @@ const Task = ({ task: { id, title, state }, onArchiveTask, onPinTask }) => (
       <span className="checkbox-custom" onClick={() => onArchiveTask(id)} />
     </label>
     <div className="title">
-      <input type="text" value={title} readOnly={true} />
+      <input
+        type="text"
+        value={title}
+        readOnly={true}
+        style={{ textOverflow: 'ellipsis' }}
+      />
     </div>
     <div className="actions" onClick={(event) => event.stopPropagation()}>
       {state !== 'TASK_ARCHIVED' && (
